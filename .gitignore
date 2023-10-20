@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Archivos generados durante la construcción o ejecución
+npm-debug.log
+yarn-error.log
+
+# Archivo de configuración de npm
+.npmrc
+
+# Carpeta de archivos temporales generados por la mayoría de editores de código
+.vscode/
+
+# Carpetas específicas de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Carpetas de copia de seguridad
+*.bak
+*.backup
+*.swp
+
+# Logs generados por herramientas de registro
+logs/
+log.txt
+log.json
+
+# Dependiendo de tu entorno, puedes necesitar agregar más reglas para tu proyecto específico.
