@@ -21,7 +21,7 @@ Descripción breve del proyecto.
 3. Ejecuta el siguiente comando para instalar las dependencias:
 
 -npm install
-##Uso
+## Uso
 Para ejecutar el proyecto, utiliza el siguiente comando:
 
 - npm run dev
@@ -31,8 +31,9 @@ en la carpeta config esta ya estabalecido el .env donde esta el puerto configura
 ##Estructura del Proyecto
 Explica aquí la estructura de directorios de tu proyecto, organizando las carpetas y archivos clave.
 
-#Rutas
-##Cursos
+# Rutas
+
+## Cursos
 1. Listar todos los cursos de un bootcamp
 - Método: GET
 - Ruta: /cursos/bootcamp/:bootcampId
@@ -52,7 +53,7 @@ Explica aquí la estructura de directorios de tu proyecto, organizando las carpe
 5. Eliminar un curso
 - Método: DELETE
 - Ruta: /cursos/:id
-##Reseñas (Reviews)
+## Reseñas (Reviews)
 1. Listar todas las reseñas de un bootcamp
 - Método: GET
 - Ruta: /reseñas/bootcamp/:bootcampId
