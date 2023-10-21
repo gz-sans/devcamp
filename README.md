@@ -3,11 +3,11 @@
 Descripción breve del proyecto.
 
 ## Tabla de Contenidos
-- [Requisitos](#requisitos)
-- [Instalación](##instalación)
-- [Uso](##uso)
+- [Requisitos](#Requisitos)
+- [Instalación](##Instalación)
+- [Uso](##Uso)
 - [Estructura del Proyecto](#estructura-del-proyecto)
-- [Rutas](#rutas)
+- [Rutas](#Rutas)
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 
