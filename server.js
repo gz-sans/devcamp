@@ -1,9 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
+const conectarDB = require('./config/db')
 
 // vincular al archivo .env
 dotenv.config({ path: "./config/.env" });
+
+//conecta a mongo
+conectarDB()
 
 //construi el objeto app
 app = express();
