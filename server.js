@@ -3,6 +3,9 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 const conectarDB = require('./config/db')
 
+//dependencias de rutas
+const bootcampsRoutes = require('./routes/bootcampsRoutes')
+
 // vincular al archivo .env
 dotenv.config({ path: "./config/.env" });
 
@@ -10,52 +13,18 @@ dotenv.config({ path: "./config/.env" });
 conectarDB()
 
 //construi el objeto app
-app = express();
+const app = express();
+app.use(express.json())
+
+//conecta las rutas al objeto app
+app.use('/api/v1/devcamp/bootcamps', bootcampsRoutes)
 
 //rutas de prueva
 app.get("/prueba/:id", (request, response) => {
   response.send(`hola , ${request.params.id}`);
 });
 
-//rutas bootcamps
-//endpiont
 
-app.get("/bootcamps", (req, res) => {
-  res.json({
-    success: true,
-    msg: "aqui se mostraran todos los bootcamps",
-  });
-});
-//traer un bootcamsp por id
-app.get("/bootcamps/:id", (req, res) => {
-  res.json({
-    success: true,
-    msg: `aqui se mostraran todos los bootcamps por id: ${req.params.id}`,
-  });
-});
-
-//crear un bootcamp porpost
-app.post("/bootcamp", (req, res) => {
-  res.json({
-    success: true,
-    msg: `aqui se crea un bootcamps`,
-  });
-});
-//aqui se actualizar el bootcamp
-app.put("/bootcamp/:id", (req, res) => {
-  res.json({
-    success: true,
-    msg: `aqui se editara  ${req.params.id}`,
-  });
-});
-
-//aqui se elimina
-app.delete("/bootcamp/:id", (req, res) => {
-  res.json({
-    success: true,
-    msg: `se elimino:  ${req.params.id}`,
-  });
-});
 //----------------------------------------
 // Rutas para Cursos
 app.get("/cursos", (req, res) => {
