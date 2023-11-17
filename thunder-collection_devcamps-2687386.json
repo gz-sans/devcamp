@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "devcamps-2687386",
-    "dateExported": "2023-11-10T16:36:52.450Z",
+    "dateExported": "2023-11-17T22:06:44.439Z",
     "version": "1.1",
     "folders": [
         {
@@ -27,7 +27,7 @@
         },
         {
             "_id": "d1539b8e-bf61-4fd4-8e88-bc5794ff2e1f",
-            "name": "user",
+            "name": "auth",
             "containerId": "",
             "created": "2023-11-10T06:23:53.604Z",
             "sortNum": 40000
@@ -206,6 +206,30 @@
             "tests": []
         },
         {
+            "_id": "0779253e-0d3a-4013-b038-147c156bc308",
+            "colId": "e4da1a58-250e-409f-ab5d-3935ec89b104",
+            "containerId": "d1539b8e-bf61-4fd4-8e88-bc5794ff2e1f",
+            "name": "registrar",
+            "url": "http://127.0.0.1:5000/api/v1/devcamp/auth/register/",
+            "method": "POST",
+            "sortNum": 85000,
+            "created": "2023-11-10T06:44:30.439Z",
+            "modified": "2023-11-17T22:05:00.654Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"gzsans\",\n    \"email\": \"juancta268@gmai.com\",\n    \"password\": \"gz1234542\",\n    \"role\": \"admin\"\n  }\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "8ab4a4e6-5581-4edd-8063-2d70c7d04815",
             "colId": "e4da1a58-250e-409f-ab5d-3935ec89b104",
             "containerId": "f04ced72-8bed-41a4-8a8d-334fff738352",
@@ -231,6 +255,30 @@
             "modified": "2023-11-10T16:23:27.829Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "00db48ff-8946-4456-9370-0e76d3203f53",
+            "colId": "e4da1a58-250e-409f-ab5d-3935ec89b104",
+            "containerId": "d1539b8e-bf61-4fd4-8e88-bc5794ff2e1f",
+            "name": "login",
+            "url": "http://127.0.0.1:5000/api/v1/devcamp/auth/login/",
+            "method": "POST",
+            "sortNum": 127500,
+            "created": "2023-11-17T13:05:58.244Z",
+            "modified": "2023-11-17T22:05:17.167Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"juancta268@gmai.com\",\n    \"password\": \"gz1234542\"\n  }\n",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -304,11 +352,11 @@
             "colId": "e4da1a58-250e-409f-ab5d-3935ec89b104",
             "containerId": "d1539b8e-bf61-4fd4-8e88-bc5794ff2e1f",
             "name": "view user",
-            "url": "http://127.0.0.1:5000/api/v1/devcamp/users/",
+            "url": "http://127.0.0.1:5000/api/v1/devcamp/auth",
             "method": "GET",
             "sortNum": 170000,
             "created": "2023-11-10T06:26:41.354Z",
-            "modified": "2023-11-10T06:43:46.562Z",
+            "modified": "2023-11-17T13:03:24.542Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -325,30 +373,6 @@
             "modified": "2023-11-10T06:44:36.847Z",
             "headers": [],
             "params": [],
-            "tests": []
-        },
-        {
-            "_id": "0779253e-0d3a-4013-b038-147c156bc308",
-            "colId": "e4da1a58-250e-409f-ab5d-3935ec89b104",
-            "containerId": "d1539b8e-bf61-4fd4-8e88-bc5794ff2e1f",
-            "name": "post user",
-            "url": "http://127.0.0.1:5000/api/v1/devcamp/users/",
-            "method": "POST",
-            "sortNum": 190000,
-            "created": "2023-11-10T06:44:30.439Z",
-            "modified": "2023-11-10T06:45:46.568Z",
-            "headers": [
-                {
-                    "name": "Content-Type",
-                    "value": "application/json"
-                }
-            ],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"name\": \"gzsans\",\n    \"email\": \"usuario@example.com\",\n    \"role\": \"admon\",\n    \"password\": \"1234\"\n  }\n",
-                "form": []
-            },
             "tests": []
         },
         {
