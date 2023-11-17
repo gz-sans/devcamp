@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
     });
   }
 });
-
+//
 // Obtener un bootcamp por ID
 router.get('/:id', async (req, res) => {
   const bootcampId = req.params.id;
