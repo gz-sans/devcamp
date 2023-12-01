@@ -4,15 +4,17 @@ const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../models/usersModel'); // Importa el modelo de usuario
 
-const router = express.Router(); // Define un enrutador
 
+const router = express.Router(); // Define un enrutador
 // Ruta para registrar un nuevo usuario
 router.post("/register", async (req, res) => {
     try {
         const user = await UserModel.create(req.body);
+        const token = await user.generarJWT(); // Add 'await' here
         res.status(201).json({
             success: true,
-            data: user
+            data: user,
+            token_jwt: token // Incluye el token reponsable
         });
     } catch (error) {
         // Manejar errores específicos y devolver mensajes de error apropiados
@@ -29,6 +31,7 @@ router.post("/register", async (req, res) => {
         }
     }
 });
+
 
 // Ruta para iniciar sesión
 router.post("/login", async (req, res) => {
@@ -56,10 +59,19 @@ router.post("/login", async (req, res) => {
 
         // Verificar la contraseña
         if (await user.compararPassword(password)) {
-            return res.status(200).json({
+            const token = user.generarJWT();
+            //opciones para creacion de la cookie
+
+            const options = {
+                
+                expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
+                httpOnly: true // La cookie solo es accesible a través del protocolo HTTP(S)
+            }
+            return res.status(200).cookie('token',token,options).json({
                 success: true,
                 message: "Usuario logeado correctamente.",
-                data: user
+                data: user,
+                token_jwt: token // Incluye el token reponsable
             });
         } else {
             res.status(400).json({

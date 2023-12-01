@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const conectarDB = require("./config/db"); // Importa la función para conectar a la base de datos
+const cookieParser = require("cookie-parser")
 
 // Importa las rutas de las diferentes entidades
 const usersRoutes = require("./routes/usersRoutes");
@@ -21,6 +22,7 @@ const app = express();
 // Configura para que la aplicación pueda entender JSON
 
 app.use(express.json());
+app.use(cookieParser());
 
 // Conecta las rutas a la aplicación Express
 app.use("/api/v1/devcamp/bootcamps", bootcampRoutes); // Rutas relacionadas con bootcamps

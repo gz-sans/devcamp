@@ -12,7 +12,6 @@ const BootcampSchema = new mongoose.Schema({
   phone: {
     type: Number,
     required: [true, "Teléfono requerido"], // El teléfono es un campo requerido
-    max: [10, "El teléfono debe tener 10 dígitos"], // El teléfono debe tener un máximo de 10 dígitos
     min: [9, "El teléfono debe tener al menos 9 dígitos"] // El teléfono debe tener al menos 9 dígitos
   },
   // Dirección del bootcamp
